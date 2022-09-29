@@ -1,4 +1,10 @@
-public class Account
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+
+
+namespace mongodb_classes.Models
+{
+    internal class Account
     {
         [BsonId]
         [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
@@ -20,3 +26,4 @@ public class Account
         [BsonElement("transfers_complete")]
         public string[] TransfersComplete { get; set; } = Array.Empty<string>();
     }
+}
