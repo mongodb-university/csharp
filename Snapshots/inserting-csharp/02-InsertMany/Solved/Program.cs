@@ -32,3 +32,5 @@ var accountB = new Account
 
 // TODO: Create an expression which inserts multiple documents into the `accounts` collection below:
 accountsCollection.InsertMany(new List<Account>() { accountA, accountB });
+
+Console.WriteLine("Successfully inserted two documents into the `accounts` collection!");
