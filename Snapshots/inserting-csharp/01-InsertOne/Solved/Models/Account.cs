@@ -20,5 +20,8 @@ namespace mongodb_classes.Models
         public decimal Balance { get; set; } 
         [BsonElement("transfers_complete")]
         public string[] TransfersComplete { get; set; } = Array.Empty<string>();
+        [BsonRepresentation(BsonType.String)]
+        [BsonElement("last_updated")]
+        public DateTimeOffset? LastUpdated { get; set; }
     }
 }

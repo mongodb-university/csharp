@@ -14,14 +14,17 @@ var database = client.GetDatabase("bank");
 var accountsCollection = database.GetCollection<Account>("accounts");
 var transfersCollection = database.GetCollection<Transfer>("transfers");
 
-var sampleDocument = new Accounts
+var sampleDocument = new Account
     {
         AccountId = "MDB829001337",
         AccountHolder = "Linus Torvalds",
-        AcountType = "checking",
-        Balance = 50352434
+        AccountType = "checking",
+        Balance = 50352434,
+        LastUpdated = DateTimeOffset.UtcNow
     };
 
 
 // TODO: Create an expression which inserts a single document into the `accounts` collection below:
 accountsCollection.InsertOne(sampleDocument);
+
+Console.WriteLine("Successfully inserted a document into the `accounts` collection!");
