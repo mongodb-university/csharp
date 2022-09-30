@@ -14,7 +14,7 @@ namespace mongodb_classes.Models
         [BsonElement("account_holder")]
         public string AccountHolder { get; set; } = String.Empty;
         [BsonElement("account_type")]
-        public string AcountType { get; set; } = String.Empty;
+        public string AccountType { get; set; } = String.Empty;
         [BsonRepresentation(BsonType.Decimal128)]
         [BsonElement("balance")]
         public decimal Balance { get; set; } 
