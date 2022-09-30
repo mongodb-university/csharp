@@ -7,7 +7,7 @@ namespace mongodb_classes.Models
     {
         [BsonId]
         [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
-        public string Id { get; set; } = string.Empty;
+        public string Id { get; set; } = string.Empty; = string.Empty;
         // Create a new BsonElement below:
         
         public string AccountId { get; set; } = String.Empty;

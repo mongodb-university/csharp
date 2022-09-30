@@ -6,7 +6,7 @@ namespace mongodb_classes.Models
     {
         [BsonId]
         [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
-        public string Id { get; set; }
+        public string Id { get; set; } = string.Empty;
         [BsonElement("transfer_id")]
         public string TransferId { get; set; } = String.Empty;
         [BsonElement("to_account")]
