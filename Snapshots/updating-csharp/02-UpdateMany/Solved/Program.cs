@@ -14,8 +14,8 @@ var database = client.GetDatabase("bank");
 var accountsCollection = database.GetCollection<Account>("accounts");
 var transfersCollection = database.GetCollection<Transfer>("transfers");
 
-var documentsToUpdate = Builders<BsonDocument>.Filter.Lt("balance", 500);
-var update = Builders<BsonDocument>.Update.Inc("balance", 10);
+var documentsToUpdate = Builders<Account>.Filter.Lt("balance", 500);
+var update = Builders<Account>.Update.Inc("balance", 10);
 
 // TODO: Create a new variable named `result`:
 var result = accountsCollection.UpdateMany(documentsToUpdate, update);
