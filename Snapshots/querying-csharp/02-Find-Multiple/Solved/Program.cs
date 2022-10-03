@@ -21,5 +21,5 @@ var documents = accountsCollection.Find(filter).ToList();
 
 foreach (Account doc in documents)
 {
-    Console.WriteLine(doc.ToString());
+    Console.WriteLine(doc.Balance.ToString());
 }

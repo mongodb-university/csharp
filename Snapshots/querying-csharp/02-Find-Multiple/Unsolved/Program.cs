@@ -21,5 +21,5 @@ var transfersCollection = database.GetCollection<Transfer>("transfers");
 
 foreach (Account doc in documents)
 {
-    Console.WriteLine(doc.ToString());
+    Console.WriteLine(doc.Balance.ToString());
 }
