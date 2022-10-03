@@ -19,7 +19,7 @@ var transfersCollection = database.GetCollection<Transfer>("transfers");
 // TODO: Create a new variable named `documents`below:
 
 
-foreach (BsonDocument doc in documents)
+foreach (Account doc in documents)
 {
     Console.WriteLine(doc.ToString());
 }
