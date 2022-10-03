@@ -17,4 +17,4 @@ var transfersCollection = database.GetCollection<Transfer>("transfers");
 // TODO: Complete the `Find()` query so that it returns the first document in the `accounts` collection with `AccountId` of `MDB773154309` using LINQ below:
 var firstDocument = accountsCollection.Find(account => account.AccountId == "MDB773154309").FirstOrDefault();
 
-Console.WriteLine(firstDocument.ToString());
+Console.WriteLine(firstDocument.AccountHolder.ToString());
