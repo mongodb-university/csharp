@@ -21,5 +21,6 @@ var update = Builders<BsonDocument>.Update.Inc("balance", 10);
 
 if (result.IsModifiedCountAvailable)
 {
-    Console.WriteLine("Number of document updated:\n\t{result.ModifiedCount");
+    Console.WriteLine("Number of documents updated: ");
+    Console.WriteLine("\t{0}", result.ModifiedCount);
 }
