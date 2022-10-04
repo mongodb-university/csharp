@@ -1,5 +1,6 @@
 using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson.Serialization;
+using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
 using mongodb_classes.Models;
 
@@ -36,8 +37,6 @@ using (var session = client.StartSession())
             var fromAccountBalance = fromAccountResult.Balance - transferAmount;
             var fromAccountId = fromAccountResult.AccountId;
 
-            Console.WriteLine(fromAccountBalance.GetType());
-
             // Obtain the account the money will be going 
             var toAccountResult = accountsCollection.Find(e => e.AccountId == toId).FirstOrDefault();
             // Get the balance and id that the money will be going too
@@ -50,7 +49,8 @@ using (var session = client.StartSession())
                 TransferId = transferId,
                 ToAccount = toAccountId,
                 FromAccount = fromAccountId,
-                Amount = transferAmount
+                Amount = transferAmount,
+                LastUpdated = DateTimeOffset.UtcNow
             };
 
             // Update the balance and transfer array for each account

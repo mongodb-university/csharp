@@ -17,5 +17,8 @@ namespace mongodb_classes.Models
         public int Amount { get; set; }
         [BsonElement("memo")]
         public string Memo { get; set; } = String.Empty;
+        [BsonRepresentation(BsonType.String)]
+        [BsonElement("last_updated")]
+        public DateTimeOffset? LastUpdated { get; set; }
     }
 }
