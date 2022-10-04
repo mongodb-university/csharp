@@ -41,7 +41,7 @@ using (var session = client.StartSession())
             var toAccountId = toAccountResult.AccountId;
 
             // Create the transfer record
-            var transferDocument = new Transfers
+            var transferDocument = new Transfer
             {
                 TransferId = transferId,
                 ToAccount = toAccountId,
