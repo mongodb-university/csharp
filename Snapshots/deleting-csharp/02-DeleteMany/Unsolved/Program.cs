@@ -14,7 +14,7 @@ var database = client.GetDatabase("bank");
 var accountsCollection = database.GetCollection<Account>("accounts");
 var transfersCollection = database.GetCollection<Transfer>("transfers");
 
-var documentsToDelete = Builders<Account>.Filter.Lt("balance", 5);
+var documentsToDelete = Builders<Account>.Filter.Lt("balance", 500);
 
 // TODO: Create a new variable named `deleteManyResult`:
 
