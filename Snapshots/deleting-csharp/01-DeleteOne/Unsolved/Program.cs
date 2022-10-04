@@ -19,4 +19,4 @@ var documentToDelete = Builders<Account>.Filter.Eq("account_id", "MDB905411541")
 // TODO: Create a new variable named `deleteOneResult`:
 
 
-Console.WriteLine(deleteOneResult);
+Console.WriteLine("Number of deleted documents: {0}", deleteOneResult.DeletedCount);

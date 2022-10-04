@@ -19,4 +19,4 @@ var documentsToDelete = Builders<BsonDocument>.Filter.Lt("balance", 5);
 // TODO: Create a new variable named `deleteManyResult`:
 var deleteManyResult = accountsCollection.DeleteMany(documentsToDelete);
 
-Console.WriteLine("Inserted many documents: {0}", deleteManyResult);
+Console.WriteLine("Number of deleted documents: {0}", deleteManyResult.DeletedCount);

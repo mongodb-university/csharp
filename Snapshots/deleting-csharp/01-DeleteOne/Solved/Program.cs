@@ -19,4 +19,4 @@ var transfersCollection = database.GetCollection<Transfer>("transfers");
 // TODO: Create a new variable named `deleteOneResult`:
 var deleteOneResult = accountsCollection.DeleteOne(documentToDelete);
 
- Console.WriteLine(deleteOneResult);
+ Console.WriteLine("Number of deleted documents: {0}", deleteOneResult.DeletedCount);
