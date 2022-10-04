@@ -14,7 +14,7 @@ var database = client.GetDatabase("bank");
 var accountsCollection = database.GetCollection<Account>("accounts");
 var transfersCollection = database.GetCollection<Transfer>("transfers");
 
-var documentToDelete = Builders<BsonDocument>.Filter.Eq("account_id", "MDB310052894");
+var documentToDelete = Builders<Account>.Filter.Eq("account_id", "MDB905411541");
 
 // TODO: Create a new variable named `deleteOneResult`:
 
