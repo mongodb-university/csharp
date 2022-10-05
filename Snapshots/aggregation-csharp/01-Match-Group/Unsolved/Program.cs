@@ -26,5 +26,5 @@ var results = aggregate.ToList();
 
 foreach (var account in results)
 {
-    Console.WriteLine(account.Balance);
+    Console.WriteLine(account);
 }
