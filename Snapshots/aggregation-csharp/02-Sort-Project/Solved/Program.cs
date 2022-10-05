@@ -1,5 +1,6 @@
 using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Bson.Serialization;
+using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
 using mongodb_classes.Models;
 
@@ -13,11 +14,11 @@ var database = client.GetDatabase("bank");
 var accountsCollection = database.GetCollection<Account>("accounts");
 var transfersCollection = database.GetCollection<Transfer>("transfers");
 
-var matchBalanceStage = Builders<Accounts>.Filter.Lt(user => user.Balance, 1500);
-var matchAccountStage = Builders<Accounts>.Filter.Eq(user => user.AcountType, "checking");
+var matchBalanceStage = Builders<Account>.Filter.Lt(user => user.Balance, 1500);
+var matchAccountStage = Builders<Account>.Filter.Eq(user => user.AccountType, "checking");
 
 // TODO: Create a new variable named `projectionStage`below:
-var projectionStage = Builders<Accounts>.Projection.Expression(u =>
+var projectionStage = Builders<Account>.Projection.Expression(u =>
     new
     {
         AccountId = u.AccountId,
