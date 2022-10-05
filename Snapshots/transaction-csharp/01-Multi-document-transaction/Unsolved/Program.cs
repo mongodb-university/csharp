@@ -62,6 +62,7 @@ using (var session = client.StartSession())
             var toAccountFilter = Builders<Account>.Filter.Eq("account_id", toId);
             accountsCollection.UpdateOne(toAccountFilter, toAccountUpdateBalance);
             var toAccountUpdateTransfers = Builders<Account>.Update.Push("transfers_complete", transferId);
+            accountsCollection.UpdateOne(toAccountFilter, toAccountUpdateTransfers);
 
             // Insert transfer doc
             transfersCollection.InsertOne(transferDocument);
