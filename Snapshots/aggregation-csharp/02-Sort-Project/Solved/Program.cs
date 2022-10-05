@@ -22,7 +22,7 @@ var projectionStage = Builders<Account>.Projection.Expression(u =>
     new
     {
         AccountId = u.AccountId,
-        AccountType = u.AcountType,
+        AccountType = u.AccountType,
         Balance = u.Balance,
         GBP = u.Balance / 1.30M
     });
