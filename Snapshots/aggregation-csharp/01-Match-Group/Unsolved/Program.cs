@@ -14,16 +14,13 @@ var database = client.GetDatabase("bank");
 var accountsCollection = database.GetCollection<Account>("accounts");
 var transfersCollection = database.GetCollection<Transfer>("transfers");
 
-var sampleDocument = new BsonDocument
-            {
-                { "account_id", "MDB829001337" },
-                { "account_holder", "Linus Torvalds" },
-                { "account_type", "checking" },
-                { "balance", 50352434 }
-            };
+// TODO: Create a new variable named matchStage:
 
-// TODO: Create an expression which inserts a single document into the `accounts` collection below:
 
+var aggregate = accountsCollection.Aggregate()
+                           .Match(matchStage)
+                           // TODO: Add a Group stage:
+                           
 
 var results = aggregate.ToList();
 
