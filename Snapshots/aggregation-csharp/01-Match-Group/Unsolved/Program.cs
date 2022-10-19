@@ -16,9 +16,9 @@ var transfersCollection = database.GetCollection<Transfer>("transfers");
 
 // TODO: Create a new variable named matchStage:
 
+// TODO: Create a new variable named aggregate:
 
-var aggregate = accountsCollection.Aggregate()
-                           .Match(matchStage)
+
                            // TODO: Add a Group stage:
                            
 
