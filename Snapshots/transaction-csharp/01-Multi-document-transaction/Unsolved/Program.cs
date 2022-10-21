@@ -17,7 +17,7 @@ var transfersCollection = database.GetCollection<Transfer>("transfers");
 using (var session = client.StartSession())
 {
 
-    // TODO: Replace `<method>` with your answere below:
+    // TODO: Replace `<method>` with your answer below:
     session.<method>(
         (s, ct) =>
         {
